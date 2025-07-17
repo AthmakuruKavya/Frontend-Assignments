@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zepto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            margin: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-cart {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        .input-search {
+            width: 500px;
+            border-radius: 10px;
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            font-size: 18px;
+            gap: 30px;
+            padding-left: 40px;
+        }
+
+        .main-page {
+            margin: 100px;
+            background-color: rgb(251, 227, 210);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .main-para {
+            color: rgb(223, 108, 26);
+            margin: 10px;
+        }
+
+        .main-head {
+            color: rgb(166, 81, 19);
+            margin: 5px;
+            font-size: 30px;
+        }
+
+        .main-btn {
+            border-radius: 10px;
+            color: white;
+            background-color: rgb(200, 102, 31);
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+        }
+        .footer-container{
+            display: flex;
+            justify-content: space-evenly;
+        }.foot-list{
+            list-style: none;
+
+        }
+        .foot-list li{
+            margin: 10px;
+        }
+        .foot-btn{
+            border-radius: 10px;
+            margin-top: 10px;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.2/images/header/primary-logo.svg">
+        <input type="search" placeholder="Search for" class="input-search">
+        <div>
+            <ul class="header-cart">
+                <li>Login</li>
+                <li>Cart</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <nav>
+            <ul class="navbar">
+                <li>All</li>
+                <li>Cafe</li>
+                <li>Home</li>
+                <li>Toys</li>
+                <li>Fresh</li>
+                <li>Electronics</li>
+                <li>Mobiles</li>
+                <li>Beauty</li>
+                <li>Fashion</li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div class="main-page">
+            <p class="main-para">COFFEE LOVERS</p>
+            <h2 class="main-head">Dive into the </h2>
+            <h2 class="main-head">world of fresh</h2>
+            <h2 class="main-head"> Brew</H2>
+            <button class="main-btn">More Items ></button>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div>
+                <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.2/images/logo.svg" width="90px">
+                <p>@Zepto Marketplace Private Limited</p>
+            </div>
+            <div>
+                <ul class="foot-list">
+                    <li>Home</li>
+                    <li>Delivery Areas</li>
+                    <li>Careers</li>
+                    <li>Customer Support</li>
+                    <li>Press</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="foot-list">
+                    <li>Privacy Policy</li>
+                    <li>Terms of Use</li>
+                    <li>Responsible Disclosure Policy</li>
+                    <li>Mojo - a Zepto Blog</li>
+                    <li>Sell on Zepto</li>
+                    <li>Deliver with Zepto</li>
+                </ul>
+            </div>
+            <div>
+                <p>Download App</p>
+                <button class="foot-btn">Get it on play store</button>
+                <div>
+                    <button class="foot-btn">Get it on app store</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
