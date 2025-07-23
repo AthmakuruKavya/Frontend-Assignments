@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zepto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header style="height: 100px; background: linear-gradient(rgb(236, 220, 255), rgb(255, 255, 255));">
+        <div class="header-container">
+            <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.2/images/header/primary-logo.svg">
+            <div class="saver-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-circle-fill"
+                    viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="8" />
+                </svg>
+                <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.3/images/super-saver/super-saver-inactive.svg"
+                    alt="">
+            </div>
+            <button class="select-btn">Select Location</button>
+            <div class="search-box">
+                <svg xmlns="http://www.w3.org/2000/svg" padding="12px" width="17" height="17" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 17 17">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+                <span class="input-search">Search for</span>
+
+            </div>
+            <div class="login-icon-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+                <span>Login</span>
+            </div>
+            <div class="cart-icon-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                </svg>
+                <span>Cart</span>
+            </div>
+        </div>
+    </header>
+    <div class="nav-container">
+        <div class="nav-items">
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-bag-check" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+                    <path
+                        d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                </svg>
+                <span>All</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cup-hot"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M.5 6a.5.5 0 0 0-.488.608l1.652 7.434A2.5 2.5 0 0 0 4.104 16h5.792a2.5 2.5 0 0 0 2.44-1.958l.131-.59a3 3 0 0 0 1.3-5.854l.221-.99A.5.5 0 0 0 13.5 6zM13 12.5a2 2 0 0 1-.316-.025l.867-3.898A2.001 2.001 0 0 1 13 12.5M2.64 13.825 1.123 7h11.754l-1.517 6.825A1.5 1.5 0 0 1 9.896 15H4.104a1.5 1.5 0 0 1-1.464-1.175" />
+                    <path
+                        d="m4.4.8-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 3.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 3.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 3 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 4.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.253.382l-.018.025-.005.008-.002.002A.5.5 0 0 1 6.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 6.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 6 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 7.4.8m3 0-.003.004-.014.019a4 4 0 0 0-.204.31 2 2 0 0 0-.141.267c-.026.06-.034.092-.037.103v.004a.6.6 0 0 0 .091.248c.075.133.178.272.308.445l.01.012c.118.158.26.347.37.543.112.2.22.455.22.745 0 .188-.065.368-.119.494a3 3 0 0 1-.202.388 5 5 0 0 1-.252.382l-.019.025-.005.008-.002.002A.5.5 0 0 1 9.6 4.2l.003-.004.014-.019a4 4 0 0 0 .204-.31 2 2 0 0 0 .141-.267c.026-.06.034-.092.037-.103a.6.6 0 0 0-.09-.252A4 4 0 0 0 9.6 2.8l-.01-.012a5 5 0 0 1-.37-.543A1.53 1.53 0 0 1 9 1.5c0-.188.065-.368.119-.494.059-.138.134-.274.202-.388a6 6 0 0 1 .253-.382l.025-.035A.5.5 0 0 1 10.4.8" />
+                </svg>
+                <span class="nav-span">Cafe</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path
+                        d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
+                </svg>
+                <span>Home</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-boxes"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434zM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567zM7.5 9.933l-2.75 1.571v3.134l2.75-1.571zm1 3.134 2.75 1.571v-3.134L8.5 9.933zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567zm2.242-2.433V3.504L8.5 5.076V8.21zM7.5 8.21V5.076L4.75 3.504v3.134zM5.258 2.643 8 4.21l2.742-1.567L8 1.076zM15 9.933l-2.75 1.571v3.134L15 13.067zM3.75 14.638v-3.134L1 9.933v3.134z" />
+                </svg>
+                <span>Toys</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                    <path
+                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                </svg>
+                <span>Fresh</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-headphones" viewBox="0 0 16 16">
+                    <path
+                        d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5" />
+                </svg>
+                <span>Electronics</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-phone"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                </svg>
+                <span>Mobiles</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-brush"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z" />
+                </svg>
+                <span>Beauty</span>
+            </button>
+            <button class="nav-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-person-standing-dress" viewBox="0 0 16 16">
+                    <path
+                        d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 12.25V12h1v3.25a.75.75 0 0 0 1.5 0V12h1l-1-5v-.215a.285.285 0 0 1 .56-.078l.793 2.777a.711.711 0 1 0 1.364-.405l-1.065-3.461A3 3 0 0 0 8.784 3.5H7.216a3 3 0 0 0-2.868 2.118L3.283 9.079a.711.711 0 1 0 1.365.405l.793-2.777a.285.285 0 0 1 .56.078V7l-1 5h1v3.25a.75.75 0 0 0 1.5 0Z" />
+                </svg>
+                <span>Fashion</span>
+            </button>
+        </div>
+    </div>
+    <div class="main-body">
+        <div class="top1-images-container">
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/38047553-95f3-47c6-a1ff-4794e1227d3a.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/dc4a299d-521f-4a64-8205-c5ba8e1d13e3.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/8d4d3977-5197-49d9-9867-8a670524e48b.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/031c2a24-d40f-4272-8c71-8a566252495e.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/ec7b14c6-2640-4165-b3ae-68c09a249ae0.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/8d4fb022-bae0-432d-92c8-2b12d97ee6cc.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/498eea73-358c-42c1-b482-158e80669be9.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/20d9687b-58a4-4bf7-a561-99198b4d5ca1.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/366e5b7d-2028-4935-b9f1-75bfa085c3d7.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/474e6e58-1894-4378-86f1-168cc7266d1a.png"
+                    alt="" class="top1-img">
+            </div>
+            <div>
+                <img src="https://cdn.zeptonow.com/production/cms/category/59d2c0cc-e776-407c-9142-7e69898d9eab.png"
+                    alt="" class="top1-img">
+            </div>
+        </div>
+        <div class="top2-image-container">
+            <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-9600-1887,pr-true,f-auto,q-80/inventory/banner/42aa0b53-0a9e-46e5-8aa6-41448fc4643b.png"
+                alt="">
+        </div>
+        <div class="top3-image-container">
+            <div class="top3-section">
+                <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2368-528,pr-true,f-auto,q-80/inventory/banner/eaff67d6-aa53-40fe-a6ba-38793acdd518.png"
+                    alt="" class="banner">
+                <div class="top3-section-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/36d0d504-7398-4f6a-9473-8249ff4b90c6.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/e9f6da42-bdc8-4bec-b0b6-b7451d8e1ad3.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/65de6aab-ae30-48a1-a9da-db46b482630f.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/65de6aab-ae30-48a1-a9da-db46b482630f.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/eea6c8e6-cce7-4808-a32d-b38faf494b99.png"
+                        alt="" class="top3-images">
+
+                </div>
+            </div>
+            <div class="top3-section2">
+                <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2368-528,pr-true,f-auto,q-80/inventory/banner/874d9674-2f4f-4f60-bc5b-9fb52084a738.png"
+                    alt="" class="banner">
+                <div class="top3-section-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/10c23ba4-03c4-4986-9206-f2024b826284.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/245d5797-cc01-4121-8e46-33b7f3d51e61.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/a7a2a5a9-90c8-4ec3-bd7c-250351d8acb1.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/9538cabc-4243-4841-99a7-176b1773a84f.png"
+                        alt="" class="top3-images">
+                    <img src="https://cdn.zeptonow.com/production/inventory/banner/e0a676df-d6a5-483b-a6be-91ca84970f25.png"
+                        alt="" class="top3-images">
+                </div>
+            </div>
+        </div>
+        <div class="top4-container">
+            <div class="top4-section1">
+                <p class="box-name">COFFEE LOVERS</p>
+                <p class="box-head">Dive into the world of fresh brew</p>
+                <button class="box-btn">More Items ></button>
+            </div>
+            <div class="top4-section2">
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-5304-5304,pr-true,f-auto,q-80/cms/product_variant/9bc896d4-229d-45a4-8294-b36f97f5992c.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹189</span>
+                        <span class="rate2">₹529</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹340</span>
+                    </div>
+                    <p class="ml">450 ml</p>
+                    <p class="name">Vietnamese Cold Coffee</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.4</span>
+                        <span class="rating">(2.1k)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-4615-4615,pr-true,f-auto,q-80/cms/product_variant/d102ddef-501c-42e4-83ce-8a3d6c972558.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹129</span>
+                        <span class="rate2">₹319</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹190</span>
+                    </div>
+                    <p class="ml">250 ml</p>
+                    <p class="name">Hot Americano</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4</span>
+                        <span class="rating">(239)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/18d502d4-00ba-4533-99e3-ae817db3f361.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹159</span>
+                        <span class="rate2">₹389</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹230</span>
+                    </div>
+                    <p class="ml">350 ml</p>
+                    <p class="name">Classic Cold Coffee</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.4</span>
+                        <span class="rating">(1.5k)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/27b6109e-514e-44d0-8245-ada18e023441.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹149</span>
+                        <span class="rate2">₹319</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹170</span>
+                    </div>
+                    <p class="ml">250 ml</p>
+                    <p class="name">Cappuccino</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.1</span>
+                        <span class="rating">(579)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2400-2400,pr-true,f-auto,q-80/cms/product_variant/4e44890d-d561-4972-b190-45b0324acce8.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹129</span>
+                        <span class="rate2">₹389</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹260</span>
+                    </div>
+                    <p class="ml">450 ml</p>
+                    <p class="name">Iced Americano</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.5</span>
+                        <span class="rating">(363)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top5-container">
+            <div class="top5-head">
+                <h4>Elevate Yourself</h4>
+                <p>See All ></p>
+            </div>
+            <div class="top5-image-container">
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/9b8420a7-c81a-4d85-9233-a5f69d6d0613.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1682</span>
+                        <span class="rate2">₹4999</span>
+                    </div>
+                    <div class="top5-save-section">
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.3K</span>
+                    </div>
+                    <p class="ml">1 pack</p>
+                    <p class="name">Agaro Dual Channel Tens Massager Tm...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.4</span>
+                        <span class="rating">(2.1k)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/8ff77e56-fcb8-4d78-bac3-2e9c00323588.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1699</span>
+                        <span class="rate2">₹3490</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹1.8K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Agaro Icon Gun Massager, 4 Heads...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.3</span>
+                        <span class="rating">(278)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-800-800,pr-true,f-auto,q-80/cms/product_variant/24644d44-ee2a-4af4-84e5-7d71187d4ddf.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹679</span>
+                        <span class="rate2">₹1995</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹1.3k</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Pigeon Gun Massager Pulse</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.6</span>
+                        <span class="rating">(199)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-8167-8167,pr-true,f-auto,q-80/cms/product_variant/6e80f9e8-a778-4a7b-b27c-a192fed88a9e.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹2299</span>
+                        <span class="rate2">₹3999</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹1.7K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Ambrane 65W Charger Adapter...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.6</span>
+                        <span class="rating">(77)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/7c98575e-8d88-4c5a-aa8d-5d23755873e2.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹849</span>
+                        <span class="rate2">₹2000</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹340</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Lifelong Ems Electric Foot Massager...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.6</span>
+                        <span class="rating">(912)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/35c49c39-4686-4beb-a35d-c731122299c7.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1697</span>
+                        <span class="rate2">₹4999</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.3K</span>
+                    </div>
+                    <p class="ml">1 pack</p>
+                    <p class="name">Lifelong Gun Massager for Pa...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.5</span>
+                        <span class="rating">(80)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/32f8103e-7962-494d-bb65-c84bebd7b4c3.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹959</span>
+                        <span class="rate2">₹1996</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹1.0K</span>
+                    </div>
+                    <p class="ml">1 pack</p>
+                    <p class="name">AGARO Atom Electric Handheld Full...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.9</span>
+                        <span class="rating">(72)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2500-2500,pr-true,f-auto,q-80/cms/product_variant/9b882bfb-992c-4035-aa3b-acba864f3af4.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1259</span>
+                        <span class="rate2">₹2995</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹1.7K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Pigeon Gun Massager Nexa</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.7</span>
+                        <span class="rating">(470)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top6-container">
+            <div class="top6-section1">
+                <p class="top6-box-name">MORE TO LOVE</p>
+                <p class="top6-box-head">Explore more& uncover hidden gems</p>
+            </div>
+            <div class="top6-section2">
+                <div class="top6-section21">
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/36505655-0b0e-4b7c-abdc-92c7a230c267.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/f87c5de9-c5d1-4bc4-8c5f-fd8342f8dde2.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/b230aa9e-39d2-48cf-b70b-62b7345af476.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/690d68be-0302-4138-b48a-b2d2141c092a.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/be289cce-726b-4263-82a3-01c04168467a.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/22ecab4a-1793-4b4c-a125-ba3dd2869398.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/5c143c45-988e-4eb3-a7f8-90245c6d5e12.png"
+                            alt="" class="top6-image">
+                    </div>
+                </div>
+                <div class="top6-section22">
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/2a1050dd-b821-480a-8661-205fbeecaff9.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/86abb79d-0f88-47c7-814a-4f363d6f780f.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/8a2b7d4f-8e95-4f2e-9007-e65cdaafde88.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/11cbcab8-f25e-49dd-92ba-62de2f8ad7b9.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/609cfe73-8f8d-4700-bb5b-afd4c0851b7e.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div>
+                        <img src="https://cdn.zeptonow.com/production/tr:w-336,ar-336-496,pr-true,f-auto,q-80/inventory/banner/ef68d97b-5786-434b-a554-562be8b5877e.png"
+                            alt="" class="top6-image">
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="top7-container">
+            <div class="top5-head">
+                <h4>Get Yout Home Needs</h4>
+                <p>See All ></p>
+            </div>
+            <div class="top5-image-container">
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-4167-4167,pr-true,f-auto,q-80/cms/product_variant/55682f9c-1e5d-499c-abe4-9e94da46900a.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1299</span>
+                        <span class="rate2">₹2499</span>
+                    </div>
+                    <div class="top5-save-section">
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹1.2K</span>
+                    </div>
+                    <p class="ml">1 piece</p>
+                    <p class="name">Ambrane Aerosync PB %A Powerbank...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.4</span>
+                        <span class="rating">(175)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/06b961dc-c5e6-4e85-bca8-da9eb23a128b.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1799</span>
+                        <span class="rate2">₹4999</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.2K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">boAt 10000mAh Magnetic Wireless...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.7</span>
+                        <span class="rating">(441)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2000-2000,pr-true,f-auto,q-80/cms/product_variant/9e74953d-a9a0-416b-9c3b-da816da6ed84.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹3999</span>
+                        <span class="rate2">₹7999</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹4K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Ambrane 85W Fast Charging PowerB...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.5</span>
+                        <span class="rating">(630)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2d715a67-0366-4008-afd9-0ab224d8d825.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1799</span>
+                        <span class="rate2">₹4999</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.2K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">boAt 10000mAh Magnetic Wireless...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.1</span>
+                        <span class="rating">(52)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/2b3142f9-ade2-4619-848d-f25477a1a0d6.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1599</span>
+                        <span class="rate2">₹5499</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.9K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">boAt Energyshroom Pb435 Turbo 35w...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.5</span>
+                        <span class="rating">(648)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-2000-2000,pr-true,f-auto,q-80/cms/product_variant/eacd86c6-da98-47b5-bffb-fee989196c95.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1999</span>
+                        <span class="rate2">₹4999</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">Ambrane 10000mAh Magsafe Fast Wire...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.3</span>
+                        <span class="rating">(210)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/1454dd39-94b1-42d0-a89a-edc02245fbbb.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1099</span>
+                        <span class="rate2">₹4499</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.4K</span>
+                    </div>
+                    <p class="ml">1 pcs</p>
+                    <p class="name">boAt EnergyShroom PB331 MagnaChar...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.3</span>
+                        <span class="rating">(515)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-1500-1500,pr-true,f-auto,q-80/cms/product_variant/92a6ccd4-4f49-401e-a485-8418b71b64bb.jpg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹1649</span>
+                        <span class="rate2">₹5499</span>
+                    </div>
+                    <div>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹3.9K</span>
+                    </div>
+                    <p class="ml">1 pc</p>
+                    <p class="name">boAt Energyshroom Pb43b Turbo 35W...</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.2</span>
+                        <span class="rating">(74)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top8-container">
+            <div class="top6-section1">
+                <p class="top8-box-name">WHOLESOME MEALS</p>
+                <p class="top8-box-head">Delight in every bite with these delicacies</p>
+                <button class="top8-box-btn">More Items ></button>
+            </div>
+            <div class="top4-section2">
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-3612-3612,pr-true,f-auto,q-80/cms/product_variant/afffb018-4060-4ade-b32f-3f18e4293400.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹189</span>
+                        <span class="rate2">₹439</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹250</span>
+                    </div>
+                    <p class="ml">Serves 1</p>
+                    <p class="name">Rajma Masala & Rice</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.2</span>
+                        <span class="rating">(170)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-3920-3920,pr-true,f-auto,q-80/cms/product_variant/6ffe4c1f-8785-421e-8ec2-96d879e07473.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹159</span>
+                        <span class="rate2">₹419</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹260</span>
+                    </div>
+                    <p class="ml">Serves 1</p>
+                    <p class="name">Dal Makhani & Chapati</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.3</span>
+                        <span class="rating">(68)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-3618-3618,pr-true,f-auto,q-80/cms/product_variant/ea4bca48-a35d-4fa0-930a-c5bdc2d82695.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹149</span>
+                        <span class="rate2">₹419</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹270</span>
+                    </div>
+                    <p class="ml">Serves 4</p>
+                    <p class="name">Chole & Chapati</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.1</span>
+                        <span class="rating">(474)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-4815-4815,pr-true,f-auto,q-80/cms/product_variant/7c7766e2-1c0a-4272-97cf-06f4d143f983.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹229</span>
+                        <span class="rate2">₹529</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹300</span>
+                    </div>
+                    <p class="ml">Serves 1</p>
+                    <p class="name">Chicken Karaikudi & Rice</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.3</span>
+                        <span class="rating">(525)</span>
+                    </div>
+                </div>
+                <div class="section2-image-container">
+                    <div class="image-container">
+                        <img src="https://cdn.zeptonow.com/production/tr:w-1280,ar-4487-4487,pr-true,f-auto,q-80/cms/product_variant/6f0da7f8-e65e-430d-aee0-e809b5c2eb03.jpeg"
+                            alt="" class="top4-images">
+                        <button class="add-btn">ADD</button>
+                    </div>
+                    <div>
+                        <span class="rate1">₹65</span>
+                        <span class="rate2">₹169</span>
+                        <span class="save-style">SAVE</span>
+                        <span class="save-style">₹104</span>
+                    </div>
+                    <p class="ml">Pack of 5</p>
+                    <p class="name">wheat Chapati-Pack of 5</p>
+                    <div class="rating-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(18, 171, 18)"
+                            class="bi bi-star" viewBox="0 0 16 16">
+                            <path
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                        </svg>
+                        <span class="rating-num">4.3</span>
+                        <span class="rating">(715)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top9-container">
+            <div class="top5-head">
+                <h4>Snacks & Drinks</h4>
+            </div>
+            <div class="top9-image-container">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-225-333,pr-true,f-auto,q-80/cms/category/031c2a24-d40f-4272-8c71-8a566252495e.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-225-333,pr-true,f-auto,q-80/cms/category/f078a8dc-a9b6-41a6-9c6f-721d4892b8ee.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-225-334,pr-true,f-auto,q-80/cms/category/db346f5e-644f-426a-85af-92d707e086ac.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-226-334,pr-true,f-auto,q-80/cms/category/366e5b7d-2028-4935-b9f1-75bfa085c3d7.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-300-444,pr-true,f-auto,q-80/cms/category/ec7b14c6-2640-4165-b3ae-68c09a249ae0.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-225-333,pr-true,f-auto,q-80/cms/category/59d2c0cc-e776-407c-9142-7e69898d9eab.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-225-333,pr-true,f-auto,q-80/cms/category/90b2faee-1461-465a-a8c6-8c84716dd7dc.png"
+                    alt="" class="top9-image">
+                <img src="https://cdn.zeptonow.com/production/tr:w-210,ar-226-334,pr-true,f-auto,q-80/cms/category/9b88fff5-73f5-46fd-999f-1622db4203d7.png"
+                    alt="" class="top9-image">
+            </div>
+        </div>
+        <div class="top10-container">
+            <div class="top11-head">
+                <p>How it Works</p>
+            </div>
+            <div class="top10-image-container">
+                <div class="box-one">
+                    <div>
+                        <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.4/images/pdp/place-order.svg"
+                            alt="">
+                    </div>
+                    <p>Open tha app</p>
+                    <span>Choose from over 7000 products</span>
+                    <span>across groceries, fresh fruits &</span>
+                    <span>veggies, meat, pet care, beauty</span>
+                    <span>items & more</span>
+                </div>
+                <div class="box-one">
+                    <div>
+                        <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.4/images/pdp/place-order.svg"
+                            alt="">
+                    </div>
+                    <p>Place an order</p>
+                    <span>Add your favourite items to the cart</span>
+                    <span>& avail the best offers</span>
+                </div>
+                <div class="box-one">
+                    <div>
+                        <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/13.2.4/images/pdp/place-order.svg"
+                            alt="">
+                    </div>
+                    <p>Get free delivery</p>
+                    <span>Experience lighting-fast speed &</span>
+                    <span>get all your items delivered in 10</span>
+                    <span>minutes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            
+        </div>
+        <div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
